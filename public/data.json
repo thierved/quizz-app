@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "question": "Who is the current usa president?",
+        "answers": [
+            "Donald Trump",
+            "Hillary Clinton",
+            "Joe Biden",
+            "Leonel Messi"
+        ],
+        "correct": "Joe Baden"
+    },
+    {
+        "id": 2,
+        "question": "Who is the UCL winner?",
+        "answers": [
+            "Alaves",
+            "FC Barcelona",
+            "Chelsea FC",
+            "Juventus"
+        ],
+        "correct": "Chelsea"
+    }
+]
