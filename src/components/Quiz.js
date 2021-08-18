@@ -1,17 +1,23 @@
-import React from 'react'
+import {useState} from "react";
 
 export default function Quiz({ question }) {
+    const [selectedOption, setSelectedOption] = useState("");
+    
+    const submit = () => {
+        console.log(question.question)
+    }
+    
+    
     return (
-        <div>
-            <p>{question.question}</p>
-            {
-                question.answers.map(ans =>
-                    <div key={ans}>
-                        <input type="radio" id={ans} name="question" value={ans} />
-                        <label htmlFor={ans}>{ans}</label>
-                    </div>
-                )
+        <div className="question">
+            <h3>{question.question}</h3>
+            {question.answers.map(ans => 
+                <p className=""
+                    key={question.answers.indexOf(ans)} onClick={() =>setSelectedOption(ans)}>
+                    {ans}
+                </p>)
             }
+            <button onClick={submit}>Submit</button>
         </div>
     )
 }
