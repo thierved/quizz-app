@@ -5,3 +5,7 @@
 .wrong {
     background: #f35;
 }
+
+#highlight {
+    border:1px solid #000;
+}

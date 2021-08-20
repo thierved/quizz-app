@@ -1,25 +1,22 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import QuizList from "./components/QuizList";
+import Quiz from "./components/Quiz";
+import { data } from './data';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [currentQuestion, setCurrentQuestion] = useState(data[0]);
 
-  useEffect(() => {
-    fetch('./data.json', {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    })
-      .then(res => res.json())
-      .then(d => setData(d));
-  }, []);
+  const nextQuestion = () => {
+    if(data.indexOf(currentQuestion) + 1 < data.length - 1) {
+      setCurrentQuestion(data[data.indexOf(currentQuestion) + 1]);
+    }
+  }
 
   return (
     <div className="App">
       <h1>QuizzApp!</h1>
-      <QuizList quizData={data} />
+      <Quiz question={currentQuestion} />
+      <button onClick={nextQuestion}>next</button>
     </div>
   );
 }
