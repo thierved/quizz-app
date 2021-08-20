@@ -15,7 +15,7 @@ function App() {
   }
 
   const submit = () => {
-    console.log(score)
+    console.log(score )
   }
 
   return (

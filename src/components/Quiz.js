@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Quiz({question, score, setScore}) {
     const verifyAnswer = (choice) => {
         if(choice.correct) {
-            setScore(score + 1)
+            setScore(score + 1);
         }
     }
     return (
